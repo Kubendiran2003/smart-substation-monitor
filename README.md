@@ -24,7 +24,7 @@ The dashboard represents how the ESP32-CAM based hardware system operates in rea
 ## 🚀 Live Application
 
 🔗 **Live Demo:**  
-https://smart-substation-monitor.netlify.app
+https://electrical-substation-monitoring.netlify.app
 
 ---
 
