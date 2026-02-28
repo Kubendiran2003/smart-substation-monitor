@@ -1,0 +1,42 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.dashboard-main {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.grid-left {
+  min-width: 0;
+}
+
+.grid-right {
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    padding: 0 1rem;
+  }
+
+  .camera-grid-container,
+  .power-control {
+    padding: 1rem;
+  }
+}

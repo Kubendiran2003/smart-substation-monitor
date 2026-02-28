@@ -1,0 +1,89 @@
+.app-footer {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-top: 1px solid #334155;
+  padding-top: 2rem;
+  margin-top: 3rem;
+  color: #cbd5e1;
+}
+
+/* CONTAINER */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+/* TITLES */
+.footer-title {
+  color: #1ee9f0;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-sub {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* SECTION */
+.footer-section h4 {
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+  margin: 4px 0;
+  font-size: 0.85rem;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+}
+
+.social-icons .linkedin:hover {
+  color: #38bdf8;
+  transform: scale(1.2);
+}
+
+.social-icons .github:hover {
+  color: #77768d;
+  transform: scale(1.2);
+}
+
+.social-icons .instagram:hover {
+  color: #e13fb3;
+  transform: scale(1.2);
+}
+
+/* BOTTOM BAR */
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #334155;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}

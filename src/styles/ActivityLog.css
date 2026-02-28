@@ -1,0 +1,95 @@
+/* PANEL */
+.activity-panel {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.2rem;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TITLE */
+.activity-title {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* SCROLL AREA */
+.activity-list {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 6px;
+}
+
+/* LOG CARD */
+.activity-item {
+  background: #020617;
+  border-radius: 10px;
+  padding: 14px;
+  border-left: 4px solid #334155;
+  transition: all 0.3s ease;
+}
+
+/* TIME */
+.log-time {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* MESSAGE */
+.log-message {
+  color: #fff;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* ================= COLORS ================= */
+
+.log-on {
+  border-left: 4px solid #25a73f; /* RED */
+}
+
+.log-off {
+  border-left: 4px solid #ed4848; /* ORANGE */
+}
+
+.log-emergency {
+  border-left: 4px solid #d91717;
+  background: rgba(255, 59, 59, 0.15);
+}
+
+.log-normal {
+  border-left: 4px solid #3b82f6;
+}
+
+/* ================= BLINK EFFECT ================= */
+
+@keyframes blinkGlow {
+  0% {
+    box-shadow: 0 0 0px rgba(59,130,246,0);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(59,130,246,0.9);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(59,130,246,0);
+  }
+}
+
+.blink {
+  animation: blinkGlow 1s ease-in-out 2;
+}
+
+/* SCROLLBAR */
+.activity-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activity-list::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
