@@ -61,17 +61,37 @@ https://smart-substation-monitor.netlify.app
 
 ---
 
-## ⚙️ System Architecture
+## 🏗️ System Architecture
 
-ESP32-CAM (Hardware Layer)
-        ↓
-Image Capture & Sensor Data Acquisition
-        ↓
-Wireless Communication (Wi-Fi Module)
-        ↓
-Web-Based Monitoring Dashboard (React.js)
-        ↓
-Remote Switching & Control Commands
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      HARDWARE LAYER                             │
+│  ┌──────────────┐  ┌──────────────┐  ┌────────────────────┐    │
+│  │  ESP32-CAM    │  │  Sensors     │  │  Relay Module      │    │
+│  │  (Camera)     │  │  (Temp/Fire) │  │  (Power Control)   │    │
+│  └──────┬───────┘  └──────┬───────┘  └────────┬───────────┘    │
+└─────────┼─────────────────┼───────────────────┼────────────────┘
+          │                 │                   │
+          ▼                 ▼                   ▼
+┌─────────────────────────────────────────────────────────────────┐
+│              COMMUNICATION LAYER (Wi-Fi Module)                 │
+│                    Wireless Data Transfer                       │
+└─────────────────────────┬───────────────────────────────────────┘
+                          │
+                          ▼
+┌─────────────────────────────────────────────────────────────────┐
+│               WEB-BASED DASHBOARD (React.js)                    │
+│                                                                 │
+│  ┌────────────────┐ ┌──────────────┐ ┌───────────────────┐     │
+│  │ 📹 Live Camera │ │ 📊 Sensor    │ │ 🔌 Remote Power   │     │
+│  │   Monitoring   │ │   Panel      │ │   Control         │     │
+│  └────────────────┘ └──────────────┘ └───────────────────┘     │
+│  ┌────────────────┐ ┌──────────────┐                           │
+│  │ 🚨 Alert       │ │ 📱 Mobile    │                           │
+│  │   Notifications│ │   Alerts     │                           │
+│  └────────────────┘ └──────────────┘                           │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
