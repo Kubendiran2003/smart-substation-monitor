@@ -5,9 +5,11 @@ import camerafeed1 from '../assets/camera-feed-1.jpg';
 import camerafeed2 from '../assets/camera-feed-2.jpg';
 import camerafeed3 from '../assets/camera-feed-3.jpg';
 import camerafeed4 from '../assets/camera-feed-4.jpg';
+import { FaVideo } from "react-icons/fa";
 
 function CameraGrid() {
 
+  const [showLiveStream, setShowLiveStream] = useState(false);
   const [selectedCamera, setSelectedCamera] = useState(null);
   const [time, setTime] = useState(new Date());
 
@@ -16,7 +18,6 @@ function CameraGrid() {
     const interval = setInterval(() => {
       setTime(new Date());
     }, 1000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -67,12 +68,45 @@ function CameraGrid() {
         <span className="live-dot"></span>
         LIVE
       </div>
-
       <div className="camera-mode">
         {type}
       </div>
     </div>
   );
+
+  /* =======================================================
+        LIVE STREAM MODE (HIDES GRID)
+  ======================================================= */
+
+  if (showLiveStream) {
+    return (
+      <div className="camera-grid-container">
+
+        <div className="section-header">
+          <h2>📹 Live Camera Monitoring</h2>
+
+          <div className="header-actions">
+            <button
+              className="back-btn"
+              onClick={() => setShowLiveStream(false)}
+            >
+              ⬅ Back to Camera Grid
+            </button>
+
+            <span className="active-count">ESP32 Live Stream Active</span>
+          </div>
+        </div>
+
+        <div className="live-stream-wrapper">
+          <iframe
+            src="http://192.168.137.60"
+            title="ESP32 Live Stream"
+            className="live-stream-frame"
+          />
+        </div>
+      </div>
+    );
+  }
 
   /* =======================================================
         EXPANDED MODE
@@ -87,7 +121,18 @@ function CameraGrid() {
 
         <div className="section-header">
           <h2>📹 Live Camera Monitoring</h2>
-          <span className="active-count">4 cameras active</span>
+
+          <div className="header-actions">
+            <button
+              className="live-switch-btn"
+              onClick={() => setShowLiveStream(true)}
+            >
+              <FaVideo className="live-icon" />
+              Switch to Live Camera
+            </button>
+
+            <span className="active-count">4 cameras active</span>
+          </div>
         </div>
 
         <div
@@ -103,7 +148,6 @@ function CameraGrid() {
                 className="camera-live-image"
               />
 
-              {/* ✅ SAME LIVE UI */}
               <CameraLiveUI type={camera.type} />
 
               <div className="camera-scan-line"></div>
@@ -148,7 +192,18 @@ function CameraGrid() {
 
       <div className="section-header">
         <h2>📹 Live Camera Monitoring</h2>
-        <span className="active-count">4 cameras active</span>
+
+        <div className="header-actions">
+          <button
+            className="live-switch-btn"
+            onClick={() => setShowLiveStream(true)}
+          >
+            <FaVideo className="live-icon" />
+            Switch to Live Camera
+          </button>
+
+          <span className="active-count">4 cameras active</span>
+        </div>
       </div>
 
       <div className="camera-grid">
@@ -168,7 +223,6 @@ function CameraGrid() {
                   className="camera-live-image"
                 />
 
-                {/* ✅ SAME LIVE UI */}
                 <CameraLiveUI type={camera.type} />
 
                 <div className="camera-scan-line"></div>
